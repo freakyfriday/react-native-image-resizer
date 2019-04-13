@@ -31,7 +31,7 @@ public class ImageResizer {
     /**
      * Resize the specified bitmap, keeping its aspect ratio.
      */
-    private static Bitmap resizeImage(Bitmap image, int maxWidth, int maxHeight) {
+    private static Bitmap resizeImageFile(Bitmap image, int maxWidth, int maxHeight) {
         Bitmap newImage = null;
         if (image == null) {
             return null; // Can't load the image from the given path.
@@ -282,7 +282,7 @@ public class ImageResizer {
         }
 
         // Scale it first so there are fewer pixels to transform in the rotation
-        Bitmap scaledImage = ImageResizer.resizeImage(sourceImage, newWidth, newHeight);
+        Bitmap scaledImage = ImageResizer.resizeImageFile(sourceImage, newWidth, newHeight);
         if (sourceImage != scaledImage) {
             sourceImage.recycle();
         }
